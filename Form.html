@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.12.3.js"
+            integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
+</head>
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 50%;
+        background-color: #333333;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button[type=button] {
+        width: 100%;
+        background-color: #333333;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        width: auto;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<body>
+<div>
+    <img src="C:\Users\PRODUCTION\Desktop\bg1.jpg" alt="Smiley face">
+
+    <div id="willkommen">
+        <h1>Willkommen</h1>
+        <h2 style="color:#e27d21;">Herzlich willkommen auf der planet c Datenanlieferungsseite!</h2>
+        <h4 align="justify">Bevor Sie mit der Beauftragung der Advertorial Erstellung beginnen, stellen Sie sicher, dass
+            Sie folgende Informationen und Datein vorliegen haben. Ohne diese Angaben können Sie diesen Auftrag unter
+            Umständen nicht abschliessen.</h4>
+        <h4>Bitte folgende Daten und Informationen bereithalten:</h4>
+        <li>Kurzbriefing</li>
+        <li>Text</li>
+        <li>Logo in Druckqualität (EPS, PDF, JPG)</li>
+        <li>Bildmaterial in Druckqualität (EPS, PDF, JPG)</li>
+        <li>weiteres Infomaterial</li>
+        <button type="button" onclick="hide('publi','willkommen')" id="btnkunde">Weiter</button>
+        <br>
+    </div>
+
+    <form name="publi">
+        <div id="publi" style="display:none">
+            <img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/menue_1.png">
+            <h2 style="color:#e27d21;">Kunde/Motivname</h2>
+            <input type="text" id="fname" name="firstname" placeholder="Kunde/Motivname">
+            <select id="publikationselectbox" onclick="showhide()">
+                <option value="Handelsblatt">Handelsblatt</option>
+                <option value="Wirtschaftswoche">Wirtschaftswoche</option>
+                <option value="Edison">Edison</option>
+                <option value="andere">andere</option>
+            </select>
+            <div id="habl" style="display:none">
+                <table border=0>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="hand11" onclick="showhandbilder(hand11)"> 1/1
+                            249 * 371mm
+                        </td>
+                        <td><img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/handelsblatt_1_1.png"
+                                 name="hand11" style="display : none"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="hand12" onclick="showhandbilder(hand12)"> 1/2
+                            quer 249 * 186mm
+                        </td>
+                        <td><img
+                                src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/handelsblatt_1_2quer.png"
+                                name="hand12" style="display : none"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="handquer" onclick="showhandbilder(handquer)">
+                            quer 249 * 124mm
+                        </td>
+                        <td><img
+                                src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/handelsblatt_1_3quer.png"
+                                name="handquer" style="display : none"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="hand12eckfeld"
+                                   onclick="showhandbilder(hand12eckfeld)"> 1/2 Eckfeld 194.5 * 237mm
+                        </td>
+                        <td><img
+                                src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/handelsblatt_1_2e.png"
+                                name="hand12eckfeld" style="display : none"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="hand13eckfeld"
+                                   onclick="showhandbilder(hand13eckfeld)"> 1/3 Eckfeld 140 * 220mm
+                        </td>
+                        <td><img
+                                src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/handelsblatt_1_3e.png"
+                                name="hand13eckfeld" style="display : none"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="hand14eckfeld"
+                                   onclick="showhandbilder(hand14eckfeld)"> 1/4 Eckfeld 140 * 165mm
+                        </td>
+                        <td><img
+                                src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/handelsblatt_1_4e.png"
+                                name="hand14eckfeld" style="display : none"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="handmagazin"
+                                   onclick="showhandbilder(handmagazin)"> Magazin Eckfeld 194.5 * 276mm
+                        </td>
+                        <td><img
+                                src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/handelsblatt_1_4quer.png"
+                                name="handmagazin" onclick="showhide()" style="display : none"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="handelsblatt" value="sonderformat" onclick="showhide()">
+                            Sonderformat
+                        </td>
+                    </tr>
+                </table>
+                <div id="sonderformat" style="display:none">
+                    <input type="number" name="breite" placeholder="Breite" max="10">
+                    <input type="number" name="höhe" placeholder="Höhe">
+                    <input type="text" name="kommenter" placeholder="Kommenter">
+                </div>
+            </div>
+
+
+            <div id="wiwo" style="display:none">
+                <input type="radio" name="wiwo" value="satzspiegel" onclick="showhide()"> Satzspiegel<br>
+                <div id="wiwosatzspiegel">
+                    <table>
+
+                        <tr>
+                            <td><input type="radio" name="wiwosatzspiegel" value="satz11"
+                                       onclick="showhandbilder(satz11)"> 1/1 188 * 244
+                            </td>
+                            <td><img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_s_1_1.png"
+                                     name="satz11" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwosatzspiegel" value="satz23hoch"
+                                       onclick="showhandbilder(satz23hoch)"> 2/3 hoch 124 * 244
+                            </td>
+                            <td><img
+                                    src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_s_1_2quer.png"
+                                    name="satz23hoch" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwosatzspiegel" value="satz12quer"
+                                       onclick="showhandbilder(satz12quer)"> 1/2 quer 188 * 120
+                            </td>
+                            <td><img
+                                    src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_s_1_3hoch.png"
+                                    name="satz12quer" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwosatzspiegel" value="satz13hoch"
+                                       onclick="showhandbilder(satz13hoch)"> 1/3 hoch 60 * 244
+                            </td>
+                            <td><img
+                                    src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_s_1_3quer.png"
+                                    name="satz13hoch" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwosatzspiegel" value="satz13quer"
+                                       onclick="showhandbilder(satz13quer)"> 1/3 quer 188 * 120
+                            </td>
+                            <td><img
+                                    src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_s_2_3hoch.png"
+                                    name="satz13quer" style="display : none"></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+
+                <input type="radio" name="wiwo" value="anschnitt" onclick="showhide()"> Anschnitt<br>
+                <div id="wiwoanschnitt">
+                    <table>
+
+                        <tr>
+                            <td><input type="radio" name="wiwoanschnitt" value="anschnit11"
+                                       onclick="showhandbilder(anschnit11)"> 1/1 210 * 280
+                            </td>
+                            <td><img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_a_1_1.png"
+                                     name="anschnit11" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwoanschnitt" value="anschnit12hoch"
+                                       onclick="showhandbilder(anschnit12hoch)"> 2/3 hoch 134 * 280
+                            </td>
+                            <td><img
+                                    src="src=https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_a_2_3hoch.png"
+                                    name="anschnit12hoch" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwoanschnitt" value="anschnit12quer"
+                                       onclick="showhandbilder(anschnit12quer)"> 1/2 quer 210 * 138
+                            </td>
+                            <td><img
+                                    src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_a_1_2quer.png"
+                                    name="anschnit12quer" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwoanschnitt" value="anschnit13hoch"
+                                       onclick="showhandbilder(anschnit13hoch)"> 1/3 hoch 70 * 280
+                            </td>
+                            <td><img
+                                    src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_a_1_3hoch.png"
+                                    name="anschnit13hoch" style="display : none"></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="radio" name="wiwoanschnitt" value="anschnit13quer"
+                                       onclick="showhandbilder(anschnit13quer)"> 1/3 quer 210 * 94
+                            </td>
+                            <td><img
+                                    src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/wiwo_a_1_3quer.png"
+                                    name="anschnit13quer" style="display : none"></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <button type="submit" onclick="weiter()" id="btw">Weitere Publikation</button>
+            <br>
+            <div id="target">
+            </div>
+            <button type="button" onclick="hide('willkommen','publi')" id="btnwillkommen">Zurück</button>
+            <button type="button" onclick="hide('txtkurzesBriefing','publi')">Weiter</button>
+        </div>
+
+
+        <div id="txtkurzesBriefing" style="display:none">
+            <img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/menue_2.png">
+            <h2 style="color:#e27d21;">Kurzes Briefing</h2>
+            <textarea rows="8" cols="50%" name="comment" required
+                      placeholder="Bitte genaue Angaben zu möglichen Gestaltungswünschen"></textarea>
+            <button type="button" onclick="hide('publi','txtkurzesBriefing')" id="btnkunde">Zurück</button>
+            <br>
+            <button type="button" onclick="hide('dateiupload','txtkurzesBriefing')" id="btnkunde">Weiter</button>
+            <br>
+        </div>
+
+
+        <div id="dateiupload" style="display : none">
+            <img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/menue_3.png">
+            <h2 style="color:#e27d21;">Datei Upload</h2>
+
+            <p><b>Text/Infomaterial</b></p>
+            <input type="radio" name="text/infomaterial" value="texthochladen" onclick="hide('textupload','null')"> Text
+            hochladen<br>
+            <input type="file" id="textupload" accept="image/*" style="display : none">
+            <input type="radio" name="text/infomaterial" value="textplanetc" onclick="hide('null','textupload')"> Text
+            erstellt planet c (Infomaterial erforderlich)<br>
+
+            <p><b>Lektorat</b></p>
+            <input type="radio" id="lektorat" name="lektorat" value="Erwünscht"> Erwünscht<br>
+            <input type="radio" id="lektorat" name="lektorat" value="NichtErwünscht"> Nicht erwünscht<br>
+
+            <p><b>Logo</b></p>
+            <input type="radio" id="logo" name="logo" value="Erwünscht"> Erwünscht<br>
+            <input type="radio" id="logo" name="logo" value="NichtErwünscht"> Nicht erwünscht<br>
+
+            <p><b>Bilder</b></p>
+            <input type="radio" name="bilder" value="bilderhochladen" onclick="hide('bildupload','null')"> Hochladen<br>
+            <input type="file" id="bildupload" accept="image/*" style="display : none" multiple>
+            <input type="radio" name="bilder" value="NichtErwünscht" onclick="hide('null','bildupload')"> Recherchiert
+            planet c<br>
+
+            <button type="button" onclick="hide('txtkurzesBriefing','dateiupload')" id="btnkunde">Zurück</button>
+            <br>
+            <button type="button" onclick="hide('Termine','dateiupload')" id="btnkunde">Weiter</button>
+            <br>
+        </div>
+
+
+        <div id="Termine" style="display : none">
+            <img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/menue_4.png">
+            <h2 style="color:#e27d21;">Termine</h2>
+            <button type="button" onclick="hide('dateiupload','Termine')" id="btnkunde">Zurück</button>
+            <br>
+            <button type="button" onclick="hide('Ansprechpartner','Termine')" id="btnkunde">Weiter</button>
+            <br>
+        </div>
+
+
+        <div id="Ansprechpartner" style="display : none">
+            <img src="https://planetc.time-data.de/wp-content/themes/twentyfifteen/menue_5.png">
+            <h2 style="color:#e27d21;">Ansprechpartner</h2>
+            <p><b>iqm/iqd/Handelsblatt GmbH (360)</b></p>
+            <input type="email" name="emailaddress" placeholder=" Email Adresse">
+            <p><b>Abstimmung (falss abweichend von oben)</b></p>
+            <input type="email" name="emailaddress" placeholder=" Email Adresse">
+            <p>Kunde (falls erforderlich)</p>
+            <input type="email" name="emailaddress" placeholder=" Email Adresse">
+            <h4><b>vielen Dank. Sie bekommen automatisch ein E-Mail Bestätigung mit allen Angaben zu diesem Auftrag.</b>
+            </h4>
+            <button type="button" onclick="hide('Termine','Ansprechpartner')" id="btnkunde">Zurück</button>
+            <br>
+            <button type="button" onclick="hide('zusammenfassung','Ansprechpartner'); review()" id="btnkunde">
+                abschliessen
+            </button>
+            <br>
+        </div>
+
+
+        <div id="zusammenfassung" style="display : none">
+            <h2 style="color:#e27d21;">Zusammenfassung</h2>
+            <h4><b>vielen Dank. Sie bekommen automatisch ein E-Mail Bestätigung mit allen Angaben zu diesem Auftrag.</b>
+            </h4>
+            <table border=0>
+                <tr>
+                    <td><h4>Kunde/Motiv</h4></td>
+                    <td><h4 id="reviewkunde"></h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Publikation</h4></td>
+                    <td><h4 id="reviewpublikation"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Format</h4></td>
+                    <td><h4 id="reviewformat"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Preis</h4></td>
+                    <td><h4 id="reviewpreis"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Text</h4></td>
+                    <td><h4 id="reviewtext"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Lektorat</h4></td>
+                    <td><h4 id="reviewlektorat"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Logo</h4></td>
+                    <td><h4 id="reviewlogo"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Bilder</h4></td>
+                    <td><h4 id="reviewbilder"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Finales PDF</h4></td>
+                    <td><h4 id="reviewfinalespdfbilder"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>ET</h4></td>
+                    <td><h4 id="reviewet"</h4></td>
+                </tr>
+                <tr>
+                    <td><h4>Ansprechpartner</h4></td>
+                    <td><h4 id="reviewansprechpartner"</h4></td>
+                </tr>
+            </table>
+            <button type="button" onclick="hide('Ansprechpartner','zusammenfassung')" id="btnkunde">Zurück</button>
+            <br>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function showhide() {
+        var selectbox = document.getElementById("publikationselectbox");
+        var publiselect = selectbox.options[selectbox.selectedIndex].value;
+        var wiwoRadio = document.publi.wiwo.value;
+        var handsonder = document.publi.handelsblatt.value;
+
+        if (publiselect == "Handelsblatt") habl.style.display = "block"; else habl.style.display = "none";
+        if (publiselect == "Handelsblatt" && handsonder == "sonderformat") {
+            sonderformat.style.display = "block";
+            habl.style.display = "block";
+        } else {
+            sonderformat.style.display = "none";
+        }
+        if (publiselect == "Wirtschaftswoche") wiwo.style.display = "block"; else wiwo.style.display = "none";
+        if (publiselect == "Wirtschaftswoche" && wiwoRadio == "satzspiegel") {
+            wiwosatzspiegel.style.display = "block";
+            wiwo.style.display = "block";
+        } else {
+            wiwosatzspiegel.style.display = "none";
+        }
+        if (publiselect == "Wirtschaftswoche" && wiwoRadio == "anschnitt") {
+            wiwoanschnitt.style.display = "block";
+            wiwo.style.display = "block";
+        } else {
+            wiwoanschnitt.style.display = "none";
+        }
+    }
+
+    function showhandbilder(a) {
+        a.style.display = "block";
+    }
+
+
+    function hide(a, b) {
+        var show = document.getElementById(a);
+        var hide = document.getElementById(b);
+
+        if (a == "null") {
+            hide.style.display = "none";
+        }
+
+        else if (b == "null") {
+            if (show.style.display === "none") {
+                show.style.display = "block";
+            }
+        }
+
+        else {
+            if (show.style.display === "none") {
+                show.style.display = "block";
+            }
+            else show.style.display = "none";
+            hide.style.display = "none";
+        }
+    }
+
+
+    function weiter() {
+        //$("#target").append();
+        $("#target").append("");
+    }
+
+    function review() {
+
+        var kunde = document.getElementById("fname").value;
+        document.getElementById("reviewkunde").innerHTML = kunde;
+
+        var publiselectbox = document.getElementById("publikationselectbox").value;
+        document.getElementById("reviewpublikation").innerHTML = publiselectbox;
+
+        var logo = document.getElementById("logo").value;
+        document.getElementById("reviewlogo").innerHTML = logo;
+
+        var lektorat = document.getElementById("lektorat").value;
+        document.getElementById("reviewlektorat").innerHTML = lektorat;
+    }
+
+
+</script>
+</body>
+</html>
