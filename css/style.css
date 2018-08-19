@@ -20,10 +20,6 @@ input[type=submit] {
     cursor: pointer;
 }
 
-.btn {
-    color: red !important;
-}
-
 button[type=button] {
     width: 100%;
     background-color: #333333;
@@ -51,4 +47,8 @@ img {
     height: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+.facebook-messenger-blue {
+    color: #0084ff;
 }
